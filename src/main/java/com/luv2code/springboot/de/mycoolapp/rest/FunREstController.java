@@ -9,6 +9,13 @@ public class FunREstController {
     //expose "/"return ""Hello World"
     @Value("${coach.name}")
     private String coachName;
+    @Value("${team.name}")
+    private String teamName;
+
+    @GetMapping("teaminfo")
+    public String getTeamInfo(){
+        return "Coach: " +coachName + ", Team name" +teamName;
+    }
     @GetMapping("/")
     public String sayHello() {
         return "Hello World!";
