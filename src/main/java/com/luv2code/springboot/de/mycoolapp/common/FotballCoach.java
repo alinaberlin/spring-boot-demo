@@ -7,11 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Qualifier("Football")
-@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class FotballCoach implements Coach{
-    public FotballCoach(){
-        System.out.println("Football");
-    }
     @Override
     public String getDailyWorkout() {
         return "Footbal training";
