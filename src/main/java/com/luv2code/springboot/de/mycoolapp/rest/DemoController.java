@@ -10,16 +10,21 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
     private  final Coach fCoach;
     private  Coach myCoach;
+
+    private  Coach swimCoach;
     @Autowired
-    public DemoController(@Qualifier("Football") Coach fCoach)
+    public DemoController(@Qualifier("Football") Coach fCoach,  @Qualifier("cricketCoach") Coach myCoach, @Qualifier("swimCoach") Coach swimCoach)
     {
         this.fCoach = fCoach;
+        this.myCoach = myCoach;
+        this.swimCoach = swimCoach;
     }
    @Autowired
     public void getCoach (@Qualifier("cricketCoach") Coach myCoach){
         this.myCoach=myCoach;
 
     }
+
     @GetMapping("/daily-workout")
     public String getDailyWorkout(){
         return myCoach.getDailyWorkout();
