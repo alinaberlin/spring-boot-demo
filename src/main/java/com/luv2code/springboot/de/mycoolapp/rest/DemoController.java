@@ -33,5 +33,8 @@ public class DemoController {
     public String getDailyFootball(){
         return fCoach.getDailyWorkout();
     }
-
+    @GetMapping("/daily-swiming")
+    public String getDailySwimming(){
+        return swimCoach.getDailyWorkout();
+    }
 }
